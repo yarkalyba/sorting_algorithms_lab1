@@ -4,7 +4,7 @@ import copy
 import csv
 
 def task3():
-    for i in range(7, 16):
+    for i in range(15,17):
         lst = [-i for i in range(2**i)]
         print(lst)
         start = time.time()

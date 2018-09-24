@@ -4,9 +4,9 @@ import copy
 import csv
 
 def task2():
-    for i in range(16, 19):
+    for i in range(17, 18):
         lst = [i for i in range(2**i)]
-
+        print(lst)
 
         start = time.time()
         insertion_op = insertion.insertion(copy.deepcopy(lst))[1]

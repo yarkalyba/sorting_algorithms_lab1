@@ -9,7 +9,7 @@ import copy
 import csv
 
 def task1():
-    for i in range(16, 18):
+    for i in range(15, 17):
         selection_time = 0
         insertion_time = 0
         shell_time = 0

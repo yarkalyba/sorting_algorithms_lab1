@@ -9,7 +9,7 @@ import copy
 import csv
 
 def task4():
-    for i in range(7, 13):
+    for i in range(15, 17):
         lst = [random.randint(1, 3) for i in range(2 ** i)]
         selection_time = 0
         insertion_time = 0

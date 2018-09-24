@@ -1,5 +1,6 @@
 def shell(lst):
     count = 0
+    print("Started shell sort")
     gap = len(lst)//2
     while gap > 0:
         for i in range(gap, len(lst)):
@@ -7,6 +8,7 @@ def shell(lst):
             j = i
             count += 1
             while j >= gap and lst[j - gap] > value:
+                count += 1
                 lst[j] = lst[j - gap]
                 j -= gap
             lst[j] = value
