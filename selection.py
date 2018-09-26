@@ -2,14 +2,16 @@ def selection(lst):
     count = 0
     print("Started selection")
     for i in range(len(lst)):
-        lowest = lst[i]
+        lowest = i
         for j in range(i + 1, len(lst)):
             count += 1
-            if lowest > lst[j]:
-                lowest, lst[j] = lst[j], lowest
-        lst[i] = lowest
+            if lst[lowest] > lst[j]:
+                lowest = j
+        lst[i], lst[lowest] = lst[lowest], lst[i]
     return lst, count
 
 if __name__ == "__main__":
-    print(selection([9, 1, 4, 10, -1]))
+    import random
 
+    lst = [random.randint(0, 20) for i in range(2**11)]
+    print(selection(lst))

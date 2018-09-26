@@ -9,7 +9,7 @@ import copy
 import csv
 
 def task1():
-    for i in range(15, 17):
+    for i in range(7, 21):
         selection_time = 0
         insertion_time = 0
         shell_time = 0
@@ -19,7 +19,7 @@ def task1():
         shell_op = 0
         for j in range(10):
             lst = [random.randint(0, 10) for i in range(2**i)]
-            print(lst)
+            print(j, lst)
 
             start = time.time()
             insertion_op += insertion.insertion(copy.deepcopy(lst))[1]
@@ -28,21 +28,23 @@ def task1():
 
 
             start = time.time()
-            selection_op += selection.selection(lst)[1]
+            selection_op += selection.selection(copy.deepcopy(lst))[1]
             end = time.time()
+
             selection_time += end - start
 
 
             start = time.time()
-            shell_op += shellsort.shell(lst)[1]
+            shell_op += shellsort.shell(copy.copy(lst))[1]
             end = time.time()
+
             shell_time += end - start
 
-        with open("task1_op.csv", 'a') as file:
+        with open("task1_op_2.csv", 'a') as file:
             results_writer = csv.writer(file, delimiter=',')
             results_writer.writerow(['{}'.format(i)] + ['{}'.format(selection_op/10)] + ['{}'.format(insertion_op/10)] + ['{}'.format(shell_op/10)])
 
-        with open("task1_time.csv", 'a') as file:
+        with open("task1_time_2.csv", 'a') as file:
             results_writer = csv.writer(file, delimiter=',')
             results_writer.writerow(['{}'.format(i)] + ['{}'.format(selection_time/10)] + ['{}'.format(insertion_time/10)] + ['{}'.format(shell_time/10)])
 
